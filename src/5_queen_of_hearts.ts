@@ -16,7 +16,7 @@ export function meetTheQueen(): void {
 
 	let guilty: boolean = false;
 
-	let witnesses: Witness[] = []; // 👉 FIXME ❌ - call getWitnesses here
+	let witnesses: Witness[] =  getWitnesses(); // 👉 FIXED
 
 	if (!witnesses || witnesses.length === 0) {
 		print(`No witnesses have come forward to defend you.`);
@@ -45,7 +45,12 @@ export function meetTheQueen(): void {
 	}
 }
 
-// 👉 FIXME ❌ - this function needs writing to meet the above criteria
+// 👉 FIXED- this function needs writing to meet the above criteria
 function getWitnesses(): any {
-	return [];
+	return [
+		{ name: "Knave of Hearts", giveEvidence: () => verdicts[1] },
+		{ name: "Hatter", giveEvidence: () => verdicts[1] },
+		{ name: "Cook", giveEvidence: () => verdicts[1] },
+		{ name: "Alice", giveEvidence: () => verdicts[1] },
+	  ];
 }
